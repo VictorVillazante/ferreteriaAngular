@@ -1,0 +1,31 @@
+<div class="iniciar_sesion_adm">
+    <div class="img_cabecera">
+        <img src="../../../assets/img/construccion interiores.jpeg" alt="">
+    </div>
+    <div class="titulo_cabecera">
+        <h1>Ferreteria Bernabe</h1>
+        <h2>Venta de puertas, ventanas, articulos de ferreteria</h2>
+    </div>
+    <div class="link_cabecera">
+        <button (click)="login()" class="iniciar_sesion">Iniciar sesion</button>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navegador_inicial">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/inicio']" routerLinkActive="active">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/tienda']" routerLinkActive="active">Tienda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/nosotros']" routerLinkActive="active">Nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/contactos']" routerLinkActive="active">Contactos</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>

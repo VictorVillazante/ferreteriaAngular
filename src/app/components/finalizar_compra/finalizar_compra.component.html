@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<div id="ofertas">
+    <h1>Finalizar compra </h1>
+    <app-carrito></app-carrito>
+    <div class="cont_form">
+        <form [formGroup]="form" (ngSubmit)="finalizarCompra()">
+            <br>Nombre del comprador:<br><input class="my-2" formControlName="nombre" type="text" class="form-control">
+            <br>CI:<br><input class="my-2" formControlName="ci" type="text" class="form-control">
+            <br>Direccion:<br><input class="my-2" formControlName="direccion" type="text" class="form-control">
+            <br>Telefono:<br><input class="my-2" formControlName="telefono" type="number" class="form-control">
+            <br>Correo:<br><input class="my-2" formControlName="correo" type="email" class="form-control">
+            <br>Fecha entrega/recojo:<br><input class="my-2" formControlName="fecha" type="date" class="form-control">
+            <br>Tipo de entrega<br>
+            <select formControlName="consulta" class="my-2 custom-select">
+                <option selected value="recojo">Recojo</option>
+                <option value="envio">Envio</option>
+            </select><br>
+            <button type="submit">Finalizar compra</button>
+        </form>
+    </div>
+
+</div>

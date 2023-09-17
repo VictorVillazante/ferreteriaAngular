@@ -1,0 +1,35 @@
+<div class="contenedor_carrito">
+    <h1 class="titulo">Carrito</h1>
+    <div>
+        <table class="table table-bordered carrito_tabla">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Total</th>
+                    <th scope="col"></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let producto of productoCarrito">
+                    <td>{{producto.nombre}}</td>
+                    <td>{{producto.cantidad}}</td>
+                    <td>{{producto.precio}}</td>
+                    <td><button class="btn btn-danger" (click)="eliminar(producto)">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Total</td>
+                    <td colspan="2">{{obtenerTotal()}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Total con IVA</td>
+                    <td colspan="2">{{ obtenerTotalIVA() | number }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="div_button">
+        <button style="display: block;" *ngIf="total>0" class="btn btn-success finalizar_compra" routerLink="/finalizar_compra">Finalizar compra</button>
+    </div>
+</div>

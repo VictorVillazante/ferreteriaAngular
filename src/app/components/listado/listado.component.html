@@ -1,0 +1,60 @@
+<div class="contenedor_cuerpo">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/listado']" routerLinkActive="active">MVC Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/inicio']" routerLinkActive="active">Salir</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Stock</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of arrayProductos; index as i" (click)="establecerEdicion(producto)">
+                <td>{{producto.id}}</td>
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.stock}}</td>
+                <td>{{producto.precio}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+    <h3 class="text-center">Formulario para agregar productos</h3>
+    <div class="card mt-4 cont_form">
+        <div class="card-body">
+            <div class="class-title">
+                Inserte un nuevo producto
+            </div>
+            <div class="form-group">
+                <input type="text" [(ngModel)]="productoSeleccionado.nombre" placeholder="Inserte el nombre" class="form-control text-center" />
+            </div>
+            <div class="form-group">
+                <label>Stock : </label>
+                <input type="number" [(ngModel)]="productoSeleccionado.stock" placeholder="Inserte el stock" class="form-control text-center" />
+            </div>
+            <div class="form-group">
+                <label>Precio : </label>
+                <input type="number" [(ngModel)]="productoSeleccionado.precio" placeholder="Inserte la precio" class="form-control text-center" />
+            </div>
+            <button (click)="adicionarEditar()" class="btn btn-outline-success" style="margin-right:10px;">
+                      Registrar
+                    </button>
+
+            <button *ngIf="productoSeleccionado.id!=0" class="btn btn-outline-danger" (click)="delete()">
+                      Eliminar
+                    </button>
+        </div>
+    </div>
+
+</div>

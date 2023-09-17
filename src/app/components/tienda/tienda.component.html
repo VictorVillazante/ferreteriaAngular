@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<div class="contenedor_cuerpo">
+    <h1 class="titulo">
+        Tienda</h1>
+    <hr>
+    <app-carrito></app-carrito>
+    <div class="galeria">
+        <div *ngFor="let producto of productos" class="card" style="width: 18rem;">
+            <div *ngIf="producto.stock>0">
+                <img *ngIf="producto.img!=null" src="../../../assets/img/{{producto.img}}" class="card-img-top" alt="...">
+                <img *ngIf="producto.img==null" src="../../../assets/img/sin_imagen.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+
+                    <h4 class="card-title">{{producto.nombre}}</h4>
+                    <p class="card-text">
+                        <b>Precio: </b>{{producto.precio}}Bs <br>
+                        <b>Cantidad: </b>{{producto.stock}} unidades
+                    </p>
+                    <a href="#" class="btn btn-block btn-dark" style="margin-right: 10px;">Ver mas</a>
+                    <a (click)="aniadirCarrito(producto)" class="btn btn-block btn-success">Comprar</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
