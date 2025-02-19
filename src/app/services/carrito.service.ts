@@ -3,7 +3,7 @@ import { Producto } from './productos.service';
 @Injectable()
 export class CarritoService{
     carrito: Carrito[] = [];
-    acierto: boolean;
+    acierto: any;
   añadirCarrito(producto: Producto){
     this.acierto = false;
     for (const productoC of this.carrito){
@@ -31,8 +31,8 @@ export class CarritoService{
   }
 }
 export interface Carrito{
-    id: number;
-    nombre: string;
-    cantidad: number;
-    precio: number;
+    id: any;
+    nombre: any;
+    cantidad: any;
+    precio: any;
 }

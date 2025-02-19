@@ -98,9 +98,9 @@ export class ProductosService{
     }
 }
 export class Producto{
-    id: number;
-    nombre: string;
-    precio: number;
-    stock: number;
-    img: string;
+    id: any;
+    nombre: any;
+    precio: any;
+    stock: any;
+    img: any;
 }

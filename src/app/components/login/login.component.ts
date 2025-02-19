@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
     contraseña: new FormControl('', Validators.required)
   });
   ingresar(){
-    if (this.form.value.usuario === 'admin' && this.form.value.contraseña === '657483'){
+    if (this.form.value.usuario === 'admin' && this.form.value.contraseña === 'admin'){
       this.router.navigate(['listado']);
     }else{
       console.log('Datos incorrectos ingresados');
